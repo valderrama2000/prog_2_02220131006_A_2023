@@ -1,20 +1,26 @@
-package taller_3;
-
 import java.util.Scanner;
 
 public class Punto_5 {
 
-
     public static void main(String[] args) {
+        Scanner l = new Scanner(System.in);
         
-         System.out.print("de cuanto es la Temperatura--->");
-        Scanner temperatura = new Scanner(System.in);
-        float Temperatura = temperatura.nextInt();
+         double res=0;
+        System.out.print("Ingrese el numero vase-->");
+        int v= l.nextInt();
+        System.out.print("Ingrese el numero que se usara como potenci -->");
+        float p=l.nextFloat();
         
-        float fahrenheit;
-        fahrenheit = 32+(9*Temperatura/5);
-        
-        System.out.println("los grados indicados en Fahrenheit son-->"+fahrenheit);
+        if(p>=1){
+            res = Math.pow(v,p);
+            System.out.println(res);
+        }else if(p==0){
+            res=1;
+            System.out.println(res);
+        }else{
+            res =1/Math.pow(v,-p);
+            System.out.println(res);
+        }
     }
     
 }

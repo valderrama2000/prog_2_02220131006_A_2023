@@ -1,25 +1,24 @@
-
-package taller_3;
-
 import java.util.Scanner;
 
 public class Punto_3 {
 
-
     public static void main(String[] args) {
-         System.out.println("de cuanto es la base ");
-        Scanner Base = new Scanner(System.in);
-        int base = Base.nextInt();
         
-        System.out.println("de cuanto es el alto ");
-        Scanner Alto = new Scanner(System.in);
-        int alto = Alto.nextInt();
+        Scanner t = new Scanner(System.in);
         
-        System.out.println("teniendo el Alto-->"+alto+" y la Base-->"+base+" Podemos sacar la hipotenusa");
+        float total=0;
+        System.out.print("ingrese el primer numero -->");
+        int num1=t.nextInt();
+        System.out.print("Ingrese el segundo numero -->");
+        int num2 =t.nextInt();
         
-        double  hipotenusa = Math.hypot(alto, base);
-        System.out.println("La hipotenusa es -->"+hipotenusa);
-        
+        if(num2==0){
+            System.out.println("ERROR");
+        }else{
+            total=num1/num2;
+            System.out.println("la operacion es "+num1+"/"+num2+" = "+total);
+        }
     }
+    
     
 }

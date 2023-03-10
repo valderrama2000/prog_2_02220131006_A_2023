@@ -1,21 +1,32 @@
-package taller_3;
-
 import java.util.Scanner;
 
 public class Punto_11 {
 
     public static void main(String[] args) {
-        
-        Scanner Ds = new Scanner(System.in);
-        
-        System.out.print("Distancia #1-->");
-        double Ds1 = Ds.nextDouble();
-        
-        System.out.print("Distancia #2-->");
-        double Ds2 = Ds.nextDouble();
-        
-        double DsT = Math.abs(Ds1-Ds2); 
-        System.out.print("La distancia entre los puntos son de-->"+DsT);
+         Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese el número de alumnos: ");
+        int numAlumnos = sc.nextInt();
+
+        double costoA;
+        double costoT;
+
+        if (numAlumnos >= 100) {
+            costoA = 65;
+            costoT = numAlumnos * costoA;
+        } else if (numAlumnos >= 50 && numAlumnos <= 99) {
+            costoA = 70;
+            costoT = numAlumnos * costoA;
+        } else if (numAlumnos >= 30 && numAlumnos <= 49) {
+            costoA = 95;
+            costoT = numAlumnos * costoA;
+        } else {
+            costoA = 4000.0 / numAlumnos;
+            costoT = 4000;
+        }
+
+        System.out.println("El costo por alumno es de " + costoA + " euros.");
+        System.out.println("El costo total del viaje es de " + costoT + " euros.");
     }
     
 }

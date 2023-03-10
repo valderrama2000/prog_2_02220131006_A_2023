@@ -1,18 +1,24 @@
-package taller_3;
-
 import java.util.Scanner;
-
+        
 public class Punto_1 {
 
-
     public static void main(String[] args) {
+        Scanner V = new Scanner(System.in);
         
-        Scanner entrada = new Scanner(System.in);
-         System.out.println("hola como te llamas ");
+        System.out.print("Ongrese el primer numero -->");
+        int Num1 = V.nextInt();
         
-        String nombre = entrada.next();
-        System.out.println("hola " + nombre + " que tal el dia, espero que bien  " ); 
+        System.out.print("Ingrese el segundo numero -->");
+        int Num2 = V.nextInt();
         
+        if(Num1== Num2){
+            System.out.println("los dos numeros son iguales :p");
+        }else{
+            if(Num1 > Num2){
+                System.out.println("El numero mallor es -->" +Num1);
+            }else{
+                 System.out.println("el numro mallor es -->" +Num2);
+            }   
+        }
     }
-    
 }

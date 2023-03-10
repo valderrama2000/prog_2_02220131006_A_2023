@@ -1,28 +1,32 @@
-package taller_3;
-
 import java.util.Scanner;
 
 public class Punto_8 {
 
     public static void main(String[] args) {
-        Scanner en =new Scanner(System.in);
-        
-        System.out.print("Ingrese la ganacias de $teven =");
-        double sueldo = en.nextDouble();
-        
-        System.out.print("Veneta #1-->");
-        double n1= en.nextDouble();
-        
-        System.out.print("Venta #2-->");
-        double n2 = en.nextDouble();
-        
-        System.out.print("Venta #3-->");
-        double n3 = en.nextDouble();
-        
-        double GxV = (n1+n2+n3)*0.10;
-        double GT = (GxV+sueldo);
-        
-        System.out.println("Las ventas de $teven son de-->"+GxV+"+"+sueldo+"="+GT);
+       Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese la longitud del primer lado: ");
+        double lado1 = sc.nextDouble();
+
+        System.out.println("Ingrese la longitud del segundo lado: ");
+        double lado2 = sc.nextDouble();
+
+        System.out.println("Ingrese la longitud del tercer lado: ");
+        double lado3 = sc.nextDouble();
+
+        if (lado1 == lado2 && lado1 == lado3) {
+            System.out.println("El triángulo es equilátero.");
+        } else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+            System.out.println("El triángulo es isósceles.");
+        } else {
+            System.out.println("El triángulo es escaleno.");
+        }
+
+        if (Math.pow(lado1, 2) + Math.pow(lado2, 2) == Math.pow(lado3, 2)
+                || Math.pow(lado1, 2) + Math.pow(lado3, 2) == Math.pow(lado2, 2)
+                || Math.pow(lado2, 2) + Math.pow(lado3, 2) == Math.pow(lado1, 2)) {
+            System.out.println("El triángulo es rectángulo.");
+        }
     }
     
 }

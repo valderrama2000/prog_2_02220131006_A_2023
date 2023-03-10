@@ -1,24 +1,41 @@
-package taller_3;
 import java.util.Scanner;
 
 public class Punto_12 {
 
     public static void main(String[] args) {
-        Scanner XY = new Scanner(System.in);
+         Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese la duración de la llamada en minutos: ");
+        int duracion = sc.nextInt();
+
+        System.out.println("Ingrese el día de la llamada (1: Domingo, 2-6: Lunes a Viernes, 7: Sábado): ");
+        int dia = sc.nextInt();
+
+        System.out.println("Ingrese el turno de la llamada (1: Mañana, 2: Tarde): ");
+        int turno = sc.nextInt();
+
+        double costoTotal = 0;
+
+        if (duracion <= 5) {
+            costoTotal = 1;
+        } else if (duracion <= 8) {
+            costoTotal = 1 + (duracion - 5) * 0.8;
+        } else if (duracion <= 10) {
+            costoTotal = 1 + 3 * 0.8 + (duracion - 8) * 0.7;
+        } else {
+            costoTotal = 1 + 3 * 0.8 + 2 * 0.7 + (duracion - 10) * 0.5;
+        }
+
+        if (dia == 1) {
+            costoTotal *= 1.03;
+        } else if (turno == 1) {
+            costoTotal *= 1.15;
+        } else {
+            costoTotal *= 1.1;
+        }
+
+        System.out.println("El costo total de la llamada es de " + costoTotal + " euros.");
         
-        System.out.print("Ingrese la cordenada X #1-->");
-        double x1 = XY.nextDouble();
-        System.out.print("Ingrese la cordenada Y #1-->");
-        double y1 = XY.nextDouble();
-        
-        System.out.print("Ingrese la cordenada del X #2-->");
-        double x2 = XY.nextDouble();
-        System.out.print("Ingrese la cordenada de Y #2-->");
-        double y2 = XY.nextDouble();
-        
-        double Distancia = Math.sqrt(Math.pow(x2-x1,2)+Math.pow(y2-y1,2));
-        System.out.println("La distancia entre los puntos (" + x1 + "," + y1 + ") y (" + x2 + "," + y2 + ") es " + Distancia);
-             
     }
     
 }

@@ -1,37 +1,42 @@
-package taller_3;
-
 import java.util.Scanner;
 
 public class Punto_10 {
 
     public static void main(String[] args) {
-        Scanner Ac =  new Scanner(System.in);
-        
-        System.out.println("Ingrese las notas de parcial");
-        System.out.print("#1-->");
-        double P1 = Ac.nextDouble();
-        System.out.print("#2-->");
-        double P2 = Ac.nextDouble();
-        System.out.print("#3-->");
-        double P3 = Ac.nextDouble();
-        double P4 = (P1+P2+P3)/3.0;
-        double Pa = P4*0.55;
-        System.out.println("las notas de los patciales son de -->"+Pa);
-        
-        System.out.println("Ingrese la nota del examen");
-        System.out.print("Examen -->");
-        double Ex = Ac.nextDouble();
-        double ExT = Ex*0.30;
-        System.out.println("la nota del examen es-->"+ExT);
-        
-        System.out.println("Ingrese la nota del taller final");
-        System.out.print("Taller-->");
-        double T = Ac.nextDouble();
-        double tF = T*0.15;
-        System.out.println("La nota del taller es-->"+tF);
-        
-        double Total = Pa+ExT+tF;
-        
-        System.out.println("las notas son de Parsial acomulada-->"+P4+" Examen-->"+ExT+" Taller-->"+tF+" Total de la Nota-->"+Total);
+         Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ingrese el tipo de uva (A o B): ");
+        String tipoUva = sc.nextLine();
+
+        System.out.println("Ingrese el tamaño de uva (1 o 2): ");
+        int tamanoUva = sc.nextInt();
+
+        System.out.println("Ingrese la cantidad de kilos de uva entregados: ");
+        double kilosUva = sc.nextDouble();
+
+        double precioInicial;
+
+        if (tipoUva.equals("A")) {
+            precioInicial = 0.8;
+            if (tamanoUva == 1) {
+                precioInicial += 0.2;
+            } else if (tamanoUva == 2) {
+                precioInicial += 0.3;
+            }
+        } else if (tipoUva.equals("B")) {
+            precioInicial = 0.7;
+            if (tamanoUva == 1) {
+                precioInicial -= 0.3;
+            } else if (tamanoUva == 2) {
+                precioInicial -= 0.5;
+            }
+        } else {
+            System.out.println("Tipo de uva inválido.");
+            return;
+        }
+
+        double pago = precioInicial * kilosUva;
+        System.out.println("El pago que recibirá el productor es de " + pago + " euros.");
     }
+    
 }
